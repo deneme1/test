@@ -1,0 +1,42 @@
+﻿@model T4ViewMvc.Models.Dummy
+
+@{
+    ViewBag.Title = "Create";
+}
+<div class="breadcumb">
+	<h2>Create</h2>
+</div>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Dummy</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Name)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Name)
+            @Html.ValidationMessageFor(model => model.Name)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IsExtraDummy)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IsExtraDummy)
+            @Html.ValidationMessageFor(model => model.IsExtraDummy)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+div#wrapper>ul.aq>li.aq-item*5>a.aq-a
